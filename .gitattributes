@@ -1,2 +1,39 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings
 * text=auto
+
+# Treat these file types as binary (no diff)
+*.png binary
+*.jpg binary
+*.gif binary
+*.mp4 binary
+*.zip binary
+*.pdf binary
+
+# Handle specific language files
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.py linguist-language=Python
+*.java linguist-language=Java
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+
+# Ignore specific file types in diffs
+*.min.js -diff
+*.min.css -diff
+
+# Mark certain directories as export-ignore
+node_modules/ export-ignore
+dist/ export-ignore
+build/ export-ignore
+
+# Handle large text files to disable diff
+*.log -diff
+*.csv -diff
+*.json -diff
+
+# Set up for CRLF and LF handling (if necessary)
+*.sh eol=lf
+*.bat eol=crlf
+*.md text
